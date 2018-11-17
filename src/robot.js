@@ -20,9 +20,11 @@ class Robot {
     place(_direction) {
         const {x, y, direction} = _direction;
         if(!this.board.place(x, y, direction)) {
-            return console.warn("Illegal Move X", x, "Y", y);
+            console.warn("Illegal Move X ", x, "Y ", y);
+            return false;
         }
         this.position = _direction;
+        return true;
     }
     report() {
         if(!this.position) {

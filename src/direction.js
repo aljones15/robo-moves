@@ -5,22 +5,23 @@ const WEST = "WEST";
 
 class Direction {
     constructor(x, y, direction) {
-        if (!x) {
-            throw new Error("X must be defined ", x);
+        if (!x && x !== 0) {
+            throw new Error(`X must be defined recieved ${x}`);
         }
-        if (!y) {
-            throw new Error("Y must be defined ", y);
+        if (!y && x !== 0) {
+            throw new Error(`Y must be defined recieved ${y}`);
         }
         if (!direction) {
-            throw new Error("Direction must be defined ", direction);
+            throw new Error(`Direction must be defined ${direction}`);
         }
         const possibleDirections = [NORTH, SOUTH, EAST, WEST, true];
         if (!possibleDirections.includes(direction)){
-            throw new Error("Direction must be one of ", possibleDirections, direction);
+            throw new Error(`Direction must be one of ${possibleDirections.join(" , ")} recieved ${direction}`);
         }
-        this.x = x;
-        this.y = y;
+        this.x = Number(x);
+        this.y = Number(y);
         this.direction = direction;
+        this.next = this.next.bind(this);
     }
     next(direction = this.direction) {
         switch(direction) {

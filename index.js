@@ -5,4 +5,4 @@ if (!file) {
     throw new Error("No File specified please add it after npm start");
 }
 
-parser(file);
+parser(file).then(robot => robot.report()).catch(e => console.error(e));
