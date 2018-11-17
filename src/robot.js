@@ -17,11 +17,12 @@ class Robot {
     set position(pos) {
         this._position = pos;
     }
-    place({x, y, direction}) {
+    place(_direction) {
+        const {x, y, direction} = _direction;
         if(!this.board.place(x, y, direction)) {
             return console.warn("Illegal Move X", x, "Y", y);
         }
-        this.position = {x, y, direction};
+        this.position = _direction;
     }
     report() {
         if(!this.position) {
@@ -34,6 +35,8 @@ class Robot {
         if(!this.position) {
             return false;
         }
+        const next = this.position.next();
+        return this.place(next); 
     }
     left() {
         if(!this.position) {
