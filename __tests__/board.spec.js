@@ -13,6 +13,10 @@ describe("board spec", () => {
         [-1,0], [5,0], [0, -1], [0, 5]
     ];
 
+    const validPoints = [
+        [0,0], [0,4], [4,4], [4,0]
+    ];
+
     it("should start all true", () => {
         const board = new Board();
         expect(board.board).toMatchObject(allTrue);
@@ -34,6 +38,21 @@ describe("board spec", () => {
             const [x,y] = point;
             const board = new Board();
             expect(board.place(x,y, "N")).toBeFalsy();
+        });
+    });
+    validPoints.forEach(point => {
+        it(`should return true for ${point}`, () => {
+            const [x,y] = point;
+            const board = new Board();
+            expect(board.get(x,y)).toBeTruthy();
+        });
+        it(`should place for ${point}`, () => {
+            const [x,y] = point;
+            const board = new Board();
+            expect(board.place(x,y, "N")).toBeTruthy();
+            expect(board.board).not.toMatchObject(allTrue);
+            board.reset();
+            expect(board.board).toMatchObject(allTrue);
         });
     });
 });
