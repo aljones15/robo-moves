@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --coverage",
-    "lint": "eslint"
+    "lint": "eslint",
+    "start": "node index.js"
   },
   "author": "liminal18",
   "license": "ISC",
