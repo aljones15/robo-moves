@@ -10,7 +10,7 @@ describe("should move", () => {
         expect(robot.position).toMatchObject(startingPoint);
         robot.move(); 
         expect(robot.position).not.toMatchObject(startingPoint);
-        expect(robot.position).toMatchObject(endingPoint);
+        expect(robot.position.y).toEqual(endingPoint.y);
     });
 
     it("should never fall", () => {
