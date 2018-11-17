@@ -42,13 +42,13 @@ class Robot {
         if(!this.position) {
             return false;
         }
-        this.position = this.position.left();
+        this.position = this._position.left();
     }
     right() {
         if(!this.position) {
             return false;
         }
-        this.position = this.position.right();
+        this.position = this._position.right();
     }
 }
 

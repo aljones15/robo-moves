@@ -29,20 +29,20 @@ describe("should move", () => {
     });
 });
 
-describe.skip("should turn", () => {
+describe("should turn", () => {
     const cardinals = ["NORTH", "SOUTH", "EAST", "WEST"];
     cardinals.forEach(cardinal => {
         it(`left from ${cardinal}`, () => {
             const startingPoint = new Direction(1,4, cardinal);
             const robot = new Robot(startingPoint);
             robot.left();
-            expect(robot.position).not.toMatchObject(startingPoint);
+            expect(robot.position.direction).not.toMatch(cardinal);
         });
         it(`right from ${cardinal}`, () => {
             const startingPoint = new Direction(1,4, cardinal);
             const robot = new Robot(startingPoint);
             robot.right();
-            expect(robot.position).not.toMatchObject(startingPoint);
+            expect(robot.position.direction).not.toMatch(cardinal);
         });
     });
 });
