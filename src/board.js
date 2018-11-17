@@ -50,4 +50,4 @@ class Board {
     } 
 }
 
-exports.default = Board;
+module.exports = Board;

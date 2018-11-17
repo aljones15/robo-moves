@@ -1,4 +1,4 @@
-import Board from "./board";
+const Board = require("./board");
 
 class Robot {
     constructor(position) {
@@ -47,4 +47,4 @@ class Robot {
     }
 }
 
-exports.default = Robot;
+module.exports = Robot;
