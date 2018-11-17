@@ -1,4 +1,4 @@
-### Instructions
+## Instructions
 
 ```
 npm i
@@ -6,9 +6,13 @@ npm test
 npm start files/sidewinder.txt
 ```
 
-## COMMANDS
+### COMMANDS
 PLACE X Y NORTH|SOUTH|EAST|WEST
+
 MOVE
+
 REPORT
+
 LEFT
+
 RIGHT
