@@ -21,10 +21,6 @@ class Direction {
         this.x = x;
         this.y = y;
         this.direction = direction;
-        this.NORTH = NORTH;
-        this.SOUTH = SOUTH;
-        this.EAST = EAST;
-        this.WEST = WEST;
     }
     next(direction = this.direction) {
         switch(direction) {
