@@ -40,6 +40,42 @@ class Direction {
             return this;
         }
     }
+    left(direction = this.direction) {
+        switch(direction) {
+        case NORTH:
+            this.direction = WEST;
+            return this;
+        case SOUTH:
+            this.direction = EAST;
+            return this;
+        case EAST:
+            this.direction = NORTH;
+            return this;
+        case WEST:
+            this.direction = SOUTH;
+            return this;
+        default:
+            return this;
+        }
+    }
+    right(direction = this.direction) {
+        switch(direction) {
+        case NORTH:
+            this.direction = EAST;
+            return this;
+        case SOUTH:
+            this.direction = WEST;
+            return this;
+        case EAST:
+            this.direction = SOUTH;
+            return this;
+        case WEST:
+            this.direction = NORTH;
+            return this;
+        default:
+            return this;
+        }
+    }
 }
 
 module.exports = Direction;
