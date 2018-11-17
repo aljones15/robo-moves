@@ -10,7 +10,7 @@ describe("board spec", () => {
     ];
 
     const invalidPoints = [
-        [-1,0]
+        [-1,0], [5,0], [0, -1], [0, 5]
     ];
 
     it("should start all true", () => {
@@ -22,5 +22,18 @@ describe("board spec", () => {
         const board = new Board();
         const adjustedPoint = board.adjustPoints(0,0);
         expect(adjustedPoint).toMatchObject({adjustedX: 4, adjustedY: 4});
+    });
+
+    invalidPoints.forEach(point => {
+        it(`should return false for ${point}`, () => {
+            const [x,y] = point;
+            const board = new Board();
+            expect(board.get(x,y)).toBeFalsy();
+        });
+        it(`should not place for ${point}`, () => {
+            const [x,y] = point;
+            const board = new Board();
+            expect(board.place(x,y, "N")).toBeFalsy();
+        });
     });
 });
