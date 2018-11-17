@@ -8,7 +8,7 @@ class Direction {
         if (!x && x !== 0) {
             throw new Error(`X must be defined recieved ${x}`);
         }
-        if (!y && x !== 0) {
+        if (!y && y !== 0) {
             throw new Error(`Y must be defined recieved ${y}`);
         }
         if (!direction) {
